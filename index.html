@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intisari Cuan Terus - Grosir Rempah, Kopi & F&B</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #0c0a09;
+            --bg-card: rgba(26, 22, 18, 0.7);
+            --border-amber: rgba(217, 119, 6, 0.25);
+            --border-amber-bright: rgba(245, 158, 11, 0.6);
+            --amber-primary: #f59e0b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-gold: #fbbf24;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(180, 83, 9, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(217, 119, 6, 0.08) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        .glass-panel {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-amber);
+            border-radius: 16px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+/* Styling Navbar Container */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 5%; /* Memberikan jarak dari tepi atas, bawah, kiri, dan kanan */
+    background: rgba(15, 12, 9, 0.95); /* Menyesuaikan warna latar header */
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Container Link Logo */
+.logo-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px; /* Jarak antara gambar logo dan tulisan */
+    text-decoration: none;
+}
+
+/* Bingkai/Wrapper Gambar Logo */
+.logo-image-wrapper {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #d97706; /* Warna latar belakang logo jika gambar berlatar transparan */
+    flex-shrink: 0;
+}
+
+.logo-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Agar gambar logo mengisi kotak dengan rapi */
+}
+
+/* Styling Teks Brand */
+.logo-text {
+    font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.logo-text span {
+    color: #f59e0b; /* Warna oranye keemasan untuk kata CUAN TERUS */
+}
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--amber-primary);
+        }
+
+        .btn-cta-nav {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Hero */
+      /* Container Utama Hero Section */
+.hero {
+    position: relative;
+    padding: 100px 20px 80px;
+    text-align: center;
+    background: #0f0c09; /* Warna dasar gelap */
+    overflow: hidden; /* Mencegah elemen glow keluar dari layar */
+}
+
+/* 1. Efek Glow Oranye Blur di Tengah Belakang Teks */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, rgba(217, 119, 6, 0.08) 50%, transparent 70%);
+    filter: blur(80px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* 2. Gambar Pattern / Foto Tematik di Background yang Disamarkan (Opsional) */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1600');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08; /* Sangat samar agar teks tetap mudah dibaca */
+    filter: blur(4px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Pastikan Teks & Konten Hero Berada di Atas Layer Glow Background */
+.hero-content, .hero-title, .hero-subtitle {
+    position: relative;
+    z-index: 2;
+}
+
+/* Judul Hero dengan Sentuhan Gradasi Emas Mewah */
+.hero-title {
+    font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.25;
+    max-width: 900px;
+    margin: 0 auto 20px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.hero-title span {
+    background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #d97706 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 32px;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .section-subtitle {
+            color: var(--amber-primary);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+            margin-bottom: 90px;
+        }
+
+        .product-card {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-amber-bright);
+        }
+
+        .product-img-box {
+            width: 100%;
+            height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 20px;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover .product-img-box img {
+            transform: scale(1.05);
+        }
+
+        .tag-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(12, 10, 9, 0.85);
+            border: 1px solid var(--border-amber);
+            color: var(--amber-primary);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            z-index: 2;
+            backdrop-filter: blur(4px);
+        }
+
+        .product-title {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .product-desc {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+
+        .item-list {
+            list-style: none;
+            background: rgba(12, 10, 9, 0.5);
+            padding: 14px 16px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .item-list li {
+            font-size: 13.5px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .item-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-list li i {
+            color: var(--amber-primary);
+            font-size: 11px;
+        }
+
+        .btn-detail {
+            width: 100%;
+            padding: 12px;
+            background: rgba(217, 119, 6, 0.1);
+            border: 1px solid var(--border-amber);
+            color: var(--amber-primary);
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .btn-detail:hover {
+            background: var(--amber-primary);
+            color: #0c0a09;
+        }
+
+        /* SECTION: TENTANG KAMI & KEUNGGULAN */
+        .about-section {
+            margin-bottom: 90px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .feature-item {
+            padding: 16px;
+            border-radius: 12px;
+            background: rgba(12, 10, 9, 0.5);
+            border: 1px solid rgba(217, 119, 6, 0.15);
+        }
+
+        .feature-icon {
+            color: var(--amber-primary);
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .feature-title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .feature-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* SECTION: JAM OPERASIONAL & INFORMASI KONTAK */
+        .info-section {
+            margin-bottom: 90px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .info-card {
+            padding: 28px;
+        }
+
+        .info-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .info-card-header i {
+            font-size: 24px;
+            color: var(--amber-primary);
+        }
+
+        .info-card-header h3 {
+            font-family: var(--font-serif);
+            font-size: 20px;
+        }
+
+        .hours-list, .contact-list {
+            list-style: none;
+        }
+
+        .hours-list li, .contact-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+        }
+
+        .hours-list li:last-child, .contact-list li:last-child {
+            border-bottom: none;
+        }
+
+        .day { color: var(--text-muted); }
+        .time { font-weight: 600; color: var(--amber-primary); }
+
+        footer {
+            padding: 30px 0;
+            border-top: 1px solid rgba(217, 119, 6, 0.15);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 34px; }
+            .nav-links { display: none; }
+            .about-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#" class="logo-brand">
+        <div class="logo-image-wrapper">
+            <img src="logo1.jpg" alt="Logo Intisari Cuan Terus">
+        </div>
+        <div class="logo-text">INTISARI <span>CUAN TERUS</span></div>
+    </a>
+    
+    <!-- Bagian Menu / Tombol Kontak (Jika Ada) -->
+</nav>
+
+    <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">
+            Pusat Grosir <span>Bahan Makanan, Minuman, Rempah dan Kerupuk</span>
+        </h1>
+        <p class="hero-subtitle">
+            Mitra grosir terpercaya penyedia rempah murni, biji kopi pilihan, gula aren, tepung, hingga minuman kemasan untuk toko, kedai, & usaha Anda.
+        </p>
+    </div>
+</section>
+
+       <!-- Tentang Kami Section -->
+    <section class="container about-section" id="tentang">
+        <div class="glass-panel" style="padding: 36px;">
+            <div class="about-grid">
+                <div class="about-text">
+                    <span class="section-subtitle">Mengenal Lebih Dekat</span>
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 16px;">Tentang Intisari Cuan Terus</h2>
+                    <p>
+                        <strong>Intisari Cuan Terus</strong> adalah usaha grosir lokal yang berdiri pada tahun 2022. Intisari Cuan Terus berfokus pada penyediaan kebutuhan harian masyarakat, pasokan bumbu dapur rempah murni, biji kopi, gula aren, tepung, serta minuman kemasan berkualitas.
+                    </p>
+                    <p>
+                        Mengusung konsep pelayanan yang cepat, ramah, dan transparan, kami berkomitmen menjadi mitra terbaik bagi pemilik usaha eceran, warung kelontong, kedai kopi, katering, hingga pemenuhan stok rumah tangga.
+                    </p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fa-solid fa-tags feature-icon"></i>
+                        <div class="feature-title">Harga Bersaing</div>
+                        <div class="feature-desc">Harga partai grosir langsung dari sumber terpercaya.</div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-shield-halved feature-icon"></i>
+                        <div class="feature-title">Kualitas Terjamin</div>
+                        <div class="feature-desc">Barang selalu baru, murni, dan dalam kondisi terbaik.</div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-truck-fast feature-icon"></i>
+                        <div class="feature-title">Pengiriman Cepat</div>
+                        <div class="feature-desc">Siap antar untuk wilayah Bekasi, Cikarang & sekitarnya.</div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-headset feature-icon"></i>
+                        <div class="feature-title">Layanan Ramah</div>
+                        <div class="feature-desc">Respon cepat melalui WhatsApp untuk cek stok & order.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Katalog Section -->
+    <section class="container" id="katalog">
+        <div class="section-heading">
+            <span class="section-subtitle">Katalog Produk</span>
+            <h2 class="section-title">Pilihan Grosir Utama</h2>
+        </div>
+
+        <div class="product-grid">
+
+            <!-- CARD 1: BEVERAGES / MINUMAN KEMASAN -->
+            <div class="glass-panel product-card">
+                <div class="product-img-box">
+                    <span class="tag-badge">Minuman Kemasan</span>
+                    <img src="minum.jpg" alt="Minuman Kemasan F&B" onerror="this.onerror=null; this.src='tehkotak.webp';">
+                </div>
+                <h3 class="product-title">Minuman Kemasan (F&B)</h3>
+                <p class="product-desc">Pasokan minuman teh kemasan terlaris siap distribusi untuk kebutuhan warung, toko eceran, & grosir.</p>
+                <ul class="item-list">
+                  
+                </ul>
+            </div>
+
+            <!-- CARD 2: REMPAH & BUMBU DAPUR -->
+            <div class="glass-panel product-card">
+                <div class="product-img-box">
+                    <span class="tag-badge">Rempah Murni</span>
+                    <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=600" alt="Rempah & Bumbu Dapur">
+                </div>
+                <h3 class="product-title">Aneka Rempah & Bumbu Dapur</h3>
+                <p class="product-desc">Rempah-rempah murni kadar air rendah dan bubuk olahan bermutu tinggi tanpa bahan campuran.</p>
+             
+            </div>
+
+            <!-- CARD 3: BIJI KOPI PILIHAN -->
+            <div class="glass-panel product-card">
+                <div class="product-img-box">
+                    <span class="tag-badge">Kopi Nusantara</span>
+                    <img src="biji kopi.jpg" alt="Biji Kopi Pilihan">
+                </div>
+                <h3 class="product-title">Biji Kopi Pilihan</h3>
+                <p class="product-desc">Pasokan biji kopi Arabika & Robusta roasting matang sempurna untuk kedai kopi, roastery, & toko retail.</p>
+                <ul class="item-list">
+                
+                </ul>
+            </div>
+
+            <!-- CARD 4: GULA AREN ASLI -->
+            <div class="glass-panel product-card">
+                <div class="product-img-box">
+                    <span class="tag-badge">Pemanis Alami</span>
+                    <img src="gula aren.jpg" alt="Gula Aren Asli">
+                </div>
+                <h3 class="product-title">Gula Aren Asli</h3>
+                <p class="product-desc">Gula aren murni pilihan untuk industri minuman, kedai kopi kekinian, kuliner, & pasar tradisional.</p>
+                <ul class="item-list">
+                 
+                </ul>
+            </div>
+
+            <!-- CARD 5: TEPUNG TERIGU & OLAHAN -->
+            <div class="glass-panel product-card">
+                <div class="product-img-box">
+                    <span class="tag-badge">Bahan Baku Utama</span>
+                    <img src="tepung.jpg" alt="Tepung Terigu & Olahan">
+                </div>
+                <h3 class="product-title">Tepung Terigu & Olahan</h3>
+                <p class="product-desc">Tepung berkualitas tinggi protein tinggi, sedang & rendah untuk kebutuhan usaha bakery, gorengan, & UMKM.</p>
+                <ul class="item-list">
+                   
+                </ul>
+            </div>
+
+            <!-- CARD 6: susu -->
+            <div class="glass-panel product-card">
+                <div class="product-img-box">
+                    <span class="tag-badge">Susu</span>
+                    <img src="susu.jpg" alt="Susu Pilihan">
+                </div>
+                <h3 class="product-title">Susu Pilihan</h3>
+                <p class="product-desc">Pasokan susu UHT, susu evaporasi, dan kental manis bermutu tinggi untuk kebutuhan kedai kopi, pembuatan kue, warung, & usaha F&B.</p>
+                <ul class="item-list">
+                  
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Jam Operasional & Layanan Section -->
+    <section class="container info-section" id="operasional">
+        <div class="info-grid">
+            
+            <!-- Jam Operasional -->
+            <div class="glass-panel info-card">
+                <div class="info-card-header">
+                    <i class="fa-regular fa-clock"></i>
+                    <div>
+                        <span class="section-subtitle" style="font-size: 11px;">Jam Layanan</span>
+                        <h3>Jam Operasional</h3>
+                    </div>
+                </div>
+                <ul class="hours-list">
+                    <li>
+                        <span class="day">Senin - Jumat</span>
+                        <span class="time">08:00 - 18:00 WIB</span>
+                    </li>
+                    <li>
+                        <span class="day">Sabtu</span>
+                        <span class="time">08:00 - 18:00 WIB</span>
+                    </li>
+                    <li>
+                        <span class="day">Minggu / Hari Libur</span>
+                        <span class="time">08:00 - 18:00 WIB</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Kontak & Alasan Memilih -->
+            <div class="glass-panel info-card">
+                <div class="info-card-header">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <span class="section-subtitle" style="font-size: 11px;">Pemesanan & Lokasi</span>
+                        <h3>Hubungi Kami</h3>
+                    </div>
+                </div>
+                <ul class="contact-list">
+                    <li>
+                        <span class="day"><i class="fa-brands fa-whatsapp"></i> WhatsApp :</span>
+                        <span class="time">+62 823 6655 1212</span>
+                    </li>
+                    <li>
+                        <span class="day"><i class="fa-solid fa-map-pin"></i> Email :</span>
+                        <span class="time" style="color: var(--text-main);">Ciciliaarum12@yahoo.com</span>
+                    </li>
+                    <li>
+                    
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 <strong>Intisari Cuan Terus</strong>. Portofolio Grosir Rempah, Kopi & F&B.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
